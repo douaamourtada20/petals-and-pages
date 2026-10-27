@@ -1,0 +1,57 @@
+
+/* =========================
+   FAVORITES PAGE
+========================= */
+
+.favorites-page {
+  min-height: 75vh;
+  background: var(--section-bg);
+  padding: 65px 0 100px;
+}
+
+.favorites-heading {
+  color: var(--burgundy);
+  margin-bottom: 55px;
+}
+
+.favorites-heading h1 {
+  font-size: clamp(40px, 5vw, 60px);
+  margin-bottom: 15px;
+}
+
+.favorites-heading > p:last-child {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.favorites-empty {
+  padding: 85px 20px;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--burgundy);
+}
+
+.favorites-empty h2 {
+  font-size: 32px;
+  margin: 25px 0 15px;
+}
+
+.favorites-empty p {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+@media (max-width: 576px) {
+  .favorites-page {
+    padding: 45px 0 70px;
+  }
+
+  .favorites-heading {
+    margin-bottom: 35px;
+  }
+
+  .favorites-empty {
+    padding: 65px 20px;
+  }
+}

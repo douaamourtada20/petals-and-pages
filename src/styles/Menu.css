@@ -1,0 +1,543 @@
+
+/* =========================
+   MENU HEADER
+========================= */
+
+.menu-header {
+  background: var(--quote-bg);
+  padding: 75px 0 65px;
+  color: var(--burgundy);
+}
+
+.menu-header h1 {
+  font-size: clamp(42px, 5vw, 65px);
+  margin-bottom: 20px;
+}
+
+.menu-header-description {
+  max-width: 600px;
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.menu-products-section {
+  padding: 70px 0 100px;
+  background: var(--section-bg);
+}
+
+/* Category filter */
+
+.category-filter {
+  margin-bottom: 45px;
+}
+
+.category-btn {
+  border: 1px solid var(--card-border);
+  border-radius: 30px;
+  background: var(--cream);
+  color: var(--charcoal);
+  padding: 11px 25px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+}
+
+.category-btn.active {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
+  color: white;
+}
+
+/* Search toolbar */
+
+.menu-toolbar {
+  margin-bottom: 30px;
+}
+
+.menu-results-count {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.menu-results-count strong {
+  color: var(--burgundy);
+}
+
+.menu-search {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+}
+
+.menu-search svg {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--burgundy);
+}
+
+.menu-search input {
+  width: 100%;
+  border: 1px solid var(--card-border);
+  border-radius: 30px;
+  padding: 12px 20px 12px 48px;
+  background: var(--cream);
+  color: var(--charcoal);
+  outline: none;
+  font-size: 13px;
+}
+
+.menu-search input:focus {
+  border-color: var(--burgundy);
+}
+
+.menu-search input::placeholder {
+  color: var(--text-muted);
+}
+
+/* =========================
+   PRODUCT CARDS
+========================= */
+
+.product-card {
+  background: var(--cream);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(128, 11, 41, 0.08);
+}
+
+.product-image {
+  position: relative;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #800b29;
+}
+
+/* Temporary image backgrounds */
+
+.product-coffee {
+  background: #eed6cb;
+}
+
+.product-drinks {
+  background: #e9d7d9;
+}
+
+.product-bakery {
+  background: #f0e0cb;
+}
+
+.product-flowers {
+  background: #efd3db;
+}
+
+.product-books {
+  background: #e5d9cf;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #800b29;
+  color: white;
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.product-info {
+  padding: 25px;
+}
+
+.product-category {
+  color: var(--burgundy);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.product-info h3 {
+  color: var(--burgundy);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.product-description {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 48px;
+  margin-bottom: 20px;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--card-border);
+  padding-top: 20px;
+}
+
+.product-price {
+  color: var(--burgundy);
+  font-weight: 700;
+  font-size: 19px;
+}
+
+.product-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: var(--burgundy);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.product-view-btn:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.menu-empty-state {
+  padding: 100px 20px;
+  color: var(--burgundy);
+}
+
+.menu-empty-state h3 {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.menu-empty-state p {
+  color: var(--text-muted);
+  margin: 15px 0 25px;
+}
+
+/* =========================
+   PRODUCT MODAL
+========================= */
+
+.product-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(20, 12, 16, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.product-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: var(--cream);
+  border-radius: 22px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: var(--section-bg);
+  color: var(--burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  background: var(--blush);
+}
+
+.modal-product-image {
+  height: 100%;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #800b29;
+}
+
+.modal-product-details {
+  padding: 55px 40px;
+}
+
+.modal-product-details h2 {
+  color: var(--burgundy);
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.modal-description {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.modal-price {
+  color: var(--burgundy);
+  font-family: "DM Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.modal-label {
+  color: var(--charcoal);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Size selection */
+
+.modal-size-section {
+  margin-bottom: 25px;
+}
+
+.size-btn {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  color: var(--charcoal);
+  padding: 9px 18px;
+  font-size: 12px;
+}
+
+.size-btn.active,
+.size-btn:hover {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
+  color: white;
+}
+
+/* Quantity control */
+
+.modal-quantity-section {
+  margin-bottom: 30px;
+}
+
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--card-border);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.quantity-control button {
+  border: none;
+  background: transparent;
+  color: var(--burgundy);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.quantity-control span {
+  min-width: 35px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.modal-add-btn {
+  width: 100%;
+}
+
+.modal-add-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-note {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+  .menu-header {
+    padding: 60px 0;
+  }
+
+  .menu-products-section {
+    padding: 55px 0 75px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .modal-product-details {
+    padding: 45px 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-product-image {
+    min-height: 230px;
+  }
+
+  .modal-product-details {
+    padding: 35px 25px;
+  }
+
+  .modal-product-details h2 {
+    font-size: 29px;
+  }
+
+  .menu-search {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-header h1 {
+    font-size: 42px;
+  }
+
+  .menu-header-description {
+    font-size: 14px;
+  }
+
+  .category-filter {
+    gap: 8px !important;
+    margin-bottom: 30px;
+  }
+
+  .category-btn {
+    padding: 9px 17px;
+    font-size: 12px;
+  }
+
+  .product-image {
+    height: 230px;
+  }
+
+  .product-info {
+    padding: 22px;
+  }
+
+  .product-modal-overlay {
+    padding: 12px;
+  }
+
+  .product-modal-content {
+    max-height: calc(100vh - 24px);
+  }
+}
+
+/* =========================
+   STEP 03 - FAVORITE BUTTON
+========================= */
+
+.favorite-btn {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 39px;
+  height: 39px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #800b29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.08);
+}
+
+.favorite-btn.active {
+  background: #800b29;
+  color: white;
+}
+.product-image {
+  overflow: hidden;
+}
+
+.product-image .site-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .site-image {
+  transform: scale(1.05);
+}
+
+.modal-product-image {
+  overflow: hidden;
+}
+
+.modal-product-image .site-image {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .modal-product-image .site-image {
+    height: 230px;
+    min-height: 230px;
+  }
+}

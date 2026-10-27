@@ -1,0 +1,319 @@
+
+/* =========================
+   NAVBAR
+========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(128, 11, 41, 0.08);
+}
+
+.site-header .navbar {
+  padding: 18px 0;
+}
+
+/* Logo */
+
+.navbar-brand {
+  color: var(--burgundy);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar-brand:hover {
+  color: var(--burgundy);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-text span {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.brand-text small {
+  margin-top: 5px;
+  font-size: 9px;
+  letter-spacing: 2.2px;
+  color: var(--charcoal);
+}
+
+/* Navigation links */
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  margin-left: 35px;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: var(--charcoal);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0 !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--burgundy);
+}
+
+.navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--burgundy);
+}
+
+/* Action icons */
+
+.nav-icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-icon-btn:hover {
+  color: var(--burgundy);
+}
+
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  background: #f6e9e4;
+  border-radius: 50%;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  width: 17px;
+  height: 17px;
+  background: #800b29;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search */
+
+.navbar-search {
+  padding-bottom: 16px;
+}
+
+.navbar-search input {
+  border: 1px solid var(--blush);
+  border-radius: 30px;
+  padding: 12px 20px;
+  background: white;
+}
+
+.navbar-search input:focus {
+  border-color: var(--burgundy);
+  box-shadow: none;
+}
+
+/* Mobile menu button */
+
+.mobile-menu-btn {
+  background: transparent;
+  border: none;
+  color: var(--burgundy);
+  padding: 8px;
+}
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+@media (max-width: 991px) {
+  .site-header .navbar {
+    padding: 13px 0;
+  }
+
+  .nav-content {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    padding: 22px 0 10px;
+  }
+
+  .nav-content.show {
+    display: flex;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar-nav .nav-link.active::after {
+    width: 30px;
+  }
+
+  .nav-actions {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-text span {
+    font-size: 20px;
+  }
+
+  .brand-text small {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-brand svg {
+    width: 30px;
+  }
+}
+
+/* Step 03 - Favorites and Cart */
+
+.nav-actions .cart-icon {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-actions .cart-icon:hover svg {
+  transform: translateY(-2px);
+}
+
+.nav-actions .cart-icon svg {
+  transition: transform 0.25s ease;
+}
+
+@media (max-width: 991px) {
+  .nav-actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================
+   FINAL MOBILE NAVBAR FIX
+========================= */
+
+@media (max-width: 991px) {
+
+  /* Keep logo and hamburger on the first row */
+  .site-header .navbar > .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo stays on the left */
+  .site-header .navbar-brand {
+    margin-right: 0;
+  }
+
+  /* Hamburger stays on the right */
+  .mobile-menu-btn {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Menu must appear below the logo */
+  .site-header .nav-content {
+    display: none;
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-header .nav-content.show {
+    display: flex;
+  }
+
+  /* Navigation links */
+  .site-header .navbar-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0 !important;
+  }
+
+  .site-header .navbar-nav .nav-link {
+    text-align: center;
+    padding: 8px 0 !important;
+  }
+
+  /* Center the underline of active link */
+  .site-header .navbar-nav .nav-link.active::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+  }
+
+  /* Icons on one centered row */
+  .site-header .nav-actions {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px !important;
+    flex-wrap: wrap;
+  }
+}
+
+/* Smaller phones */
+@media (max-width: 576px) {
+
+  .site-header .navbar {
+    padding: 12px 0;
+  }
+
+  .site-header .brand-text span {
+    font-size: 19px;
+  }
+
+  .site-header .brand-text small {
+    font-size: 7px;
+    letter-spacing: 1.3px;
+  }
+
+  .site-header .navbar-brand svg {
+    width: 29px;
+    height: 29px;
+  }
+}

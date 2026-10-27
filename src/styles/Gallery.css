@@ -1,0 +1,328 @@
+
+/* =========================
+   GALLERY HEADER
+========================= */
+
+.gallery-header {
+  padding: 75px 0;
+  background: var(--quote-bg);
+  color: var(--burgundy);
+}
+
+.gallery-header h1 {
+  font-size: clamp(44px, 5vw, 65px);
+  margin-bottom: 20px;
+}
+
+.gallery-header-description {
+  max-width: 590px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.gallery-section {
+  padding: 75px 0 100px;
+  background: var(--section-bg);
+}
+
+.gallery-filters {
+  margin-bottom: 45px;
+}
+
+.gallery-filter-btn {
+  border: 1px solid var(--card-border);
+  border-radius: 30px;
+  background: var(--cream);
+  color: var(--charcoal);
+  padding: 11px 25px;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.gallery-filter-btn:hover {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+}
+
+.gallery-filter-btn.active {
+  background: var(--burgundy);
+  color: white;
+  border-color: var(--burgundy);
+}
+
+.gallery-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 350px;
+  padding: 0;
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  color: #800b29;
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-placeholder {
+  transform: scale(1.07);
+}
+
+/* Temporary gallery colors */
+
+.gallery-coffee {
+  background: linear-gradient(135deg, #ead0c0, #cda48e);
+}
+
+.gallery-flowers {
+  background: linear-gradient(135deg, #f0d1d8, #d99faf);
+}
+
+.gallery-books {
+  background: linear-gradient(135deg, #e6d7c9, #c5ad99);
+}
+
+.gallery-bakery {
+  background: linear-gradient(135deg, #f3dfc6, #dbb995);
+}
+
+/* Hover overlay */
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(
+    to top,
+    rgba(40, 16, 24, 0.78),
+    transparent 65%
+  );
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.gallery-card-overlay span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.gallery-card-overlay h3 {
+  font-size: 24px;
+  margin: 8px 0 0;
+}
+
+/* =========================
+   GALLERY LIGHTBOX
+========================= */
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(20, 12, 16, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gallery-lightbox-content {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: var(--cream);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.gallery-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+  background: white;
+  color: #800b29;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-lightbox-image {
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #800b29;
+}
+
+.gallery-lightbox-bottom {
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.gallery-lightbox-bottom button {
+  border: 1px solid var(--card-border);
+  background: var(--section-bg);
+  color: var(--burgundy);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-lightbox-bottom h3 {
+  color: var(--burgundy);
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.gallery-lightbox-bottom p {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+  .gallery-section {
+    padding: 60px 0 80px;
+  }
+
+  .gallery-card {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-header {
+    padding: 55px 0;
+  }
+
+  .gallery-section {
+    padding: 50px 0 70px;
+  }
+
+  .gallery-filter-btn {
+    padding: 9px 17px;
+    font-size: 12px;
+  }
+
+  .gallery-filters {
+    margin-bottom: 30px;
+  }
+
+  .gallery-card {
+    height: 280px;
+  }
+
+  .gallery-lightbox-image {
+    height: 290px;
+  }
+
+  .gallery-lightbox-bottom {
+    padding: 18px;
+  }
+
+  .gallery-lightbox-bottom h3 {
+    font-size: 19px;
+  }
+}
+
+/* =========================
+   STEP 05 - REAL GALLERY PHOTOS
+========================= */
+
+.gallery-card {
+  background: var(--blush);
+}
+
+.gallery-placeholder {
+  overflow: hidden;
+}
+
+.gallery-placeholder .site-image,
+.gallery-placeholder .site-image-fallback {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-placeholder .site-image {
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .site-image {
+  transform: scale(1.07);
+}
+
+.gallery-lightbox-image {
+  overflow: hidden;
+  background: var(--blush);
+}
+
+.gallery-lightbox-image .site-image,
+.gallery-lightbox-image .site-image-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery-lightbox-image .site-image-fallback {
+  object-fit: cover;
+}
+/* Small invitation below gallery */
+
+.gallery-invitation {
+    padding: 55px 20px 65px;
+    background: var(--quote-bg);
+}
+
+.gallery-invitation h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    color: var(--burgundy);
+    margin-bottom: 12px;
+}
+
+.gallery-invitation p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.gallery-invitation .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
